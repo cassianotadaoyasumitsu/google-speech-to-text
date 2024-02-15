@@ -1,12 +1,12 @@
 from google.oauth2 import service_account
 from google.cloud import speech_v1p1beta1 as speech
 
-client_file = 'speech-zero-key.json'  # Add your client file here
+client_file = 'speech-zero-key.json'  # Add your client(json) file here
 credentials = service_account.Credentials.from_service_account_file(client_file)
 client = speech.SpeechClient(credentials=credentials)
 
 # Load audio file
-speech_file = 'add audio file here'
+speech_file = 'add audio file here'  # Add your audio file here
 with open(speech_file, "rb") as audio_file:
     content = audio_file.read()
 
@@ -29,6 +29,7 @@ config = speech.RecognitionConfig(
 )
 
 print("Waiting for operation to complete...")
+
 # Transcribe audio
 response = client.recognize(config=config, audio=audio)
 
