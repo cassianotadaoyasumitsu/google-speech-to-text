@@ -6,7 +6,7 @@ credentials = service_account.Credentials.from_service_account_file(client_file)
 client = speech.SpeechClient(credentials=credentials)
 
 # Load audio file
-speech_file = 'add audio file here'  # Add your audio file here
+speech_file = 'test.wav'  # Add your audio file here
 with open(speech_file, "rb") as audio_file:
     content = audio_file.read()
 
